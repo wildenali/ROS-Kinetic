@@ -144,8 +144,8 @@ add_executable(example1_b src/example1_b.cpp)
 ## Add cmake target dependencies of the executable
 ## same as for the library above
 # add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-add_dependencies(example1_a chapter2_tutorials_generate_messages_cpp)
-add_dependencies(example1_b chapter2_tutorials_generate_messages_cpp)
+add_dependencies(example1_a ROS-Kinetic/chapter2_tutorials_generate_messages_cpp)
+add_dependencies(example1_b ROS-Kinetic/chapter2_tutorials_generate_messages_cpp)
 
 ## Specify libraries to link a library or executable target against
 # target_link_libraries(${PROJECT_NAME}_node
