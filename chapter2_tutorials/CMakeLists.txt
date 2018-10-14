@@ -14,6 +14,9 @@ find_package(catkin REQUIRED COMPONENTS
   ##ini ada karena dipakai untuk chapter2_msg1.msg saat menggunakan msg
   ## dan ini juga di pakai untuk srv, kalau kita menggunakan service
   message_generation
+
+  ## ini ada karena digunakan untuk cfg, dynamic reconfigure atau dynamic parameters
+  dynamic_reconfigure
 )
 
 ## System dependencies are found with CMake's conventions
@@ -95,10 +98,11 @@ generate_messages(
 ##     and list every .cfg file to be processed
 
 ## Generate dynamic reconfigure parameters in the 'cfg' folder
-# generate_dynamic_reconfigure_options(
-#   cfg/DynReconf1.cfg
+## ini di aktifkan karena di gunakan untuk DYNAMIC RECONFIGURE
+generate_dynamic_reconfigure_options(
+ cfg/chapter2.cfg
 #   cfg/DynReconf2.cfg
-# )
+)
 
 ###################################
 ## catkin specific configuration ##
@@ -148,6 +152,7 @@ add_executable(example1_b src/example1_b.cpp)
 add_executable(example2_a src/example2_a.cpp)
 add_executable(example2_b src/example2_b.cpp)
 
+add_executable(example4	src/example4.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -165,6 +170,10 @@ add_dependencies(example1_b ROS-Kinetic/chapter2_tutorials_generate_messages_cpp
 add_dependencies(example2_a chapter2_tutorials_generate_messages_cpp)
 add_dependencies(example2_b chapter2_tutorials_generate_messages_cpp)
 
+## ini ada karena digunakan untuk cfg DYNAMIC RECONFIGURE
+add_dependencies(example4 chapter2_tutorials_gencfg)
+
+
 ## Specify libraries to link a library or executable target against
 # target_link_libraries(${PROJECT_NAME}_node
 #   ${catkin_LIBRARIES}
@@ -175,6 +184,8 @@ target_link_libraries(example1_b ${catkin_LIBRARIES})
 ## code di bawah ini digunakan untuk example2_a dan example2_b
 target_link_libraries(example2_a ${catkin_LIBRARIES})
 target_link_libraries(example2_b ${catkin_LIBRARIES})
+
+target_link_libraries(example4 ${catkin_LIBRARIES})
 
 #############
 ## Install ##

@@ -1,0 +1,26 @@
+ini adalah Dynamic parameters
+yaitu tools si ROS yang memudahkan kita untuk merubah-ubah parameter
+
+
+Dynamic Configure
+file nya dalam bentuk .cfg
+
+
+
+1. Setelah file chapter2.cfg disini, langkah selanjutnya
+2. buka CMakeList.txt kemudian edit beberapa garis, menjadi seperti ini
+
+find_package(catkin	REQUIRED	COMPONENTS
+roscpp
+	std_msgs
+	message_generation
+	dynamic_reconfigure
+)
+generate_dynamic_reconfigure_options(
+	cfg/chapter2.cfg
+)
+add_dependencies(example4	chapter2_tutorials_gencfg)
+
+3. Kenapa example4, karena contoh3 hanya test rqt_console aja
+4. Setelah selesai di CMakeList, kemudian
+5. Buat file 
