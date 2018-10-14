@@ -10,6 +10,10 @@ project(chapter2_tutorials)
 find_package(catkin REQUIRED COMPONENTS
   roscpp
   std_msgs
+
+  ##ini ada karena dipakai untuk chapter2_msg1.msg saat menggunakan msg
+  ## dan ini juga di pakai untuk srv, kalau kita menggunakan service
+  message_generation
 )
 
 ## System dependencies are found with CMake's conventions
@@ -46,18 +50,20 @@ find_package(catkin REQUIRED COMPONENTS
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
 ## Generate messages in the 'msg' folder
-# add_message_files(
-#   FILES
-#   Message1.msg
-#   Message2.msg
-# )
+## ini di aktifkan untuk latihan chapter2_msg1.msg
+## fungsi ini digunakan untuk memanggil file chapter2_msg1.msg di folder msg
+add_message_files(
+ FILES
+ chapter2_msg1.msg
+)
 
 ## Generate services in the 'srv' folder
-# add_service_files(
-#   FILES
-#   Service1.srv
+## ini diaktifkan karena kita akan menggunakan srv
+add_service_files(
+ FILES
+ chapter2_srv1.srv
 #   Service2.srv
-# )
+)
 
 ## Generate actions in the 'action' folder
 # add_action_files(
@@ -67,10 +73,12 @@ find_package(catkin REQUIRED COMPONENTS
 # )
 
 ## Generate added messages and services with any dependencies listed here
-# generate_messages(
-#   DEPENDENCIES
-#   std_msgs
-# )
+## ini di aktifkan untuk latihan chapter2_msg1.msg
+## fungsi ini digunakan untuk memanggil file chapter2_msg1.msg di folder msg
+generate_messages(
+ DEPENDENCIES
+ std_msgs
+)
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -102,6 +110,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
+  CATKIN_DEPENDS message_runtime    ## ini ada karena akan digunakan untuk service
 #  INCLUDE_DIRS include
 #  LIBRARIES chapter2_tutorials
 #  CATKIN_DEPENDS roscpp std_msgs
@@ -135,6 +144,11 @@ include_directories(
 add_executable(example1_a src/example1_a.cpp)
 add_executable(example1_b src/example1_b.cpp)
 
+## code di bawah ini digunakan untuk example2_a dan example2_b
+add_executable(example2_a src/example2_a.cpp)
+add_executable(example2_b src/example2_b.cpp)
+
+
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
 ## target back to the shorter version for ease of user use
@@ -147,12 +161,20 @@ add_executable(example1_b src/example1_b.cpp)
 add_dependencies(example1_a ROS-Kinetic/chapter2_tutorials_generate_messages_cpp)
 add_dependencies(example1_b ROS-Kinetic/chapter2_tutorials_generate_messages_cpp)
 
+## code di bawah ini digunakan untuk example2_a dan example2_b
+add_dependencies(example2_a chapter2_tutorials_generate_messages_cpp)
+add_dependencies(example2_b chapter2_tutorials_generate_messages_cpp)
+
 ## Specify libraries to link a library or executable target against
 # target_link_libraries(${PROJECT_NAME}_node
 #   ${catkin_LIBRARIES}
 # )
 target_link_libraries(example1_a ${catkin_LIBRARIES})
 target_link_libraries(example1_b ${catkin_LIBRARIES})
+
+## code di bawah ini digunakan untuk example2_a dan example2_b
+target_link_libraries(example2_a ${catkin_LIBRARIES})
+target_link_libraries(example2_b ${catkin_LIBRARIES})
 
 #############
 ## Install ##
