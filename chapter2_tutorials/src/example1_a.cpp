@@ -2,7 +2,7 @@
 #include "ros/ros.h"
 #include "std_msgs/String.h"
 #include <sstream>
-// chatterCallback
+
 int main(int argc, char **argv) {
   /* code */
   ros::init(argc, argv, "example1_a");
@@ -20,4 +20,3 @@ int main(int argc, char **argv) {
   }
   return 0;
 }
-// test github
