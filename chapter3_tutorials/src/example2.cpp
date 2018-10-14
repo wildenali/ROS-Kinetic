@@ -84,6 +84,7 @@ int main(int argc, char **argv) {
     ros::Duration(1).sleep();
   }
 
+  // spin
   ros::spinOnce();
 
   return EXIT_SUCCESS;
