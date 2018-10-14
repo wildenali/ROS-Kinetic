@@ -1,0 +1,7 @@
+Disini kita belajar tentang tools tools yang ada di ROS
+  yang paling terkenal adalah RQT
+
+Pelajaran PERTAMA di example1.cpp
+disini kita coba belajang menggunakan GDB debugger
+apaan tuh?
+check this out
