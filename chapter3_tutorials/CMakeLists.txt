@@ -5,7 +5,11 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   message_generation
   std_msgs
+  geometry_msgs
 )
+
+#di panggil untuk example4_ dan example5_
+add_service_files(FILES SetSpeed.srv)
 
 generate_messages(DEPENDENCIES std_msgs)
 
@@ -13,6 +17,7 @@ catkin_package(
   CATKIN_DEPENDS
     roscpp
     std_msgs
+    geometry_msgs
 )
 
 include_directories(
@@ -27,3 +32,17 @@ target_link_libraries(example2 ${catkin_LIBRARIES})
 
 add_executable(example3 src/example3.cpp)
 target_link_libraries(example3 ${catkin_LIBRARIES})
+
+add_executable(example4_ src/example4_.cpp)
+target_link_libraries(example4_ ${catkin_LIBRARIES})
+
+add_executable(example5_ src/example5_.cpp)
+target_link_libraries(example5_ ${catkin_LIBRARIES})
+
+
+install(TARGETS
+    example1 example2 example3 example4_ example5_
+  ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
