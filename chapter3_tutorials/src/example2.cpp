@@ -4,7 +4,7 @@
 int main(int argc, char **argv) {
   ros::init(argc, argv, "example2");
   ros::NodeHandle n;
-  const couble val = 3.14;
+  const double val = 3.14;
 
   // Basic Messages:
   ROS_INFO("my info nih");
@@ -66,7 +66,7 @@ int main(int argc, char **argv) {
   ROS_INFO_STREAM_FILTER(
     &filter_greater_equal,
     "My filter INFO stream message; val(" << val << ") >= 0"
-  )
+  );
 
   // Once message:
   for (int i = 0; i < 10; ++i) {
