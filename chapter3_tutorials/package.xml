@@ -50,12 +50,21 @@
   <!--   <doc_depend>doxygen</doc_depend> -->
   <buildtool_depend>catkin</buildtool_depend>
 
+  <build_depend>libpcl-all-dev</build_depend>
+  <build_depend>message_generation</build_depend>
+
+  <exec_depend>libpcl-all</exec_depend>
+  <exec_depend>message_runtime</exec_depend>
 
   <build_depend>roscpp</build_depend>
   <build_depend>std_msgs</build_depend>
 
   <!-- di panggil untuk exaple4_ dan example5_ -->
   <build_depend>geometry_msgs</build_depend>
+
+  <!-- di panggil untuk exaple6 -->
+  <build_depend>dynamic_reconfigure</build_depend>
+  <exec_depend>dynamic_reconfigure</exec_depend>
 
   <build_export_depend>roscpp</build_export_depend>
   <build_export_depend>std_msgs</build_export_depend>

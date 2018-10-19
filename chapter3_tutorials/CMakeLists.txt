@@ -6,6 +6,7 @@ find_package(catkin REQUIRED COMPONENTS
   message_generation
   std_msgs
   geometry_msgs
+  dynamic_reconfigure
 )
 
 #di panggil untuk example4_ dan example5_
@@ -13,11 +14,15 @@ add_service_files(FILES SetSpeed.srv)
 
 generate_messages(DEPENDENCIES std_msgs)
 
+#ini ada karena untuk example6
+generate_dynamic_reconfigure_options(cfg/DynamicParam.cfg)
+
 catkin_package(
   CATKIN_DEPENDS
     roscpp
     std_msgs
     geometry_msgs
+    #dynamic_reconfigure
 )
 
 include_directories(
@@ -39,9 +44,12 @@ target_link_libraries(example4_ ${catkin_LIBRARIES})
 add_executable(example5_ src/example5_.cpp)
 target_link_libraries(example5_ ${catkin_LIBRARIES})
 
+add_executable(example6 src/example6.cpp)
+target_link_libraries(example6 ${catkin_LIBRARIES})
+
 
 install(TARGETS
-    example1 example2 example3 example4_ example5_
+    example1 example2 example3 example4_ example5_ example6
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}

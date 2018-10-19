@@ -30,7 +30,7 @@ int main(int argc, char **argv) {
     msg_accel.y = 0.2 * i;
     msg_accel.z = 0.3 * i;
 
-    msg_speed.request.desire_speed = 0.01 * i;
+    msg_speed.request.desired_speed = 0.01 * i;
 
     pub_temp.publish(msg_temp);
     pub_accel.publish(msg_accel);
