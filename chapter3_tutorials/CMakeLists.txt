@@ -7,6 +7,7 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
   geometry_msgs
   dynamic_reconfigure
+  diagnostic_updater   # ada karena untuk example7.cpp
 )
 
 #di panggil untuk example4_ dan example5_
@@ -22,7 +23,9 @@ catkin_package(
     roscpp
     std_msgs
     geometry_msgs
+    message_runtime
     #dynamic_reconfigure
+    #diagnostic_updater
 )
 
 include_directories(
@@ -47,9 +50,13 @@ target_link_libraries(example5_ ${catkin_LIBRARIES})
 add_executable(example6 src/example6.cpp)
 target_link_libraries(example6 ${catkin_LIBRARIES})
 
+add_executable(example7 src/example7.cpp)
+target_link_libraries(example7 ${catkin_LIBRARIES})
+
 
 install(TARGETS
-    example1 example2 example3 example4_ example5_ example6
+  example1 example2 example3 example4_ example5_
+  example6 example7
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+  <!-- example7 -->
+  <node pkg = "chapter3_tutorials" type="example7" name="example7" output="screen" />
+
+  <!-- Diagnostic Aggregrator -->
+  <node pkg="diagnostic_aggregrator" type="aggregrator_node" name="aggregrator_node">
+    <rosparam file = "$(find chapter3_tutorials)/config/diagnostic_aggregrator.yaml" command="load"/>
+  </node>
+</launch>
