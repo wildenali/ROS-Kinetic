@@ -85,6 +85,9 @@
   <build_depend>image_transport</build_depend>
   <build_depend>sensor_msgs</build_depend>
 
+  <!-- di panggil untuk exaple9 -->
+  <build_depend>pcl_conversions</build_depend>
+
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>
