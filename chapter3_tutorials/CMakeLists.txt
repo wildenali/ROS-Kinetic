@@ -8,7 +8,12 @@ find_package(catkin REQUIRED COMPONENTS
   geometry_msgs
   dynamic_reconfigure
   diagnostic_updater   # ada karena untuk example7.cpp
+  sensor_msgs   # ada karena untuk example8.cpp
+  cv_bridge   # ada karena untuk example8.cpp
+  image_transport   # ada karena untuk example8.cpp
 )
+
+find_package(OpenCV)    # ada karena untuk example8.cpp
 
 #di panggil untuk example4_ dan example5_
 add_service_files(FILES SetSpeed.srv)
@@ -53,10 +58,13 @@ target_link_libraries(example6 ${catkin_LIBRARIES})
 add_executable(example7 src/example7.cpp)
 target_link_libraries(example7 ${catkin_LIBRARIES})
 
+add_executable(example8 src/example8.cpp)
+target_link_libraries(example8 ${catkin_LIBRARIES})
+
 
 install(TARGETS
   example1 example2 example3 example4_ example5_
-  example6 example7
+  example6 example7 example8
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}

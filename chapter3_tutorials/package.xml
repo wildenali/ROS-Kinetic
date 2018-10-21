@@ -80,6 +80,12 @@
   <build_export_depend>diagnostic_updater</build_export_depend>
   <exec_depend>diagnostic_updater</exec_depend>
 
+  <!-- di panggil untuk exaple8 -->
+  <build_depend>cv_bridge</build_depend>
+  <build_depend>image_transport</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+
+
   <!-- The export tag contains other, unspecified, tags -->
   <export>
     <!-- Other tools can request additional information be placed here -->
