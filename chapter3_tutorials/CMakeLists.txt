@@ -13,6 +13,8 @@ find_package(catkin REQUIRED COMPONENTS
   image_transport       # ada karena untuk example8.cpp
   sensor_msgs           # ada karena untuk example9.cpp
   pcl_conversions       # ada karena untuk example9.cpp
+  visualization_msgs    # ada karena untuk example10.cpp
+  interactive_markers   # ada karena untuk example10.cpp
 )
 
 find_package(OpenCV)          # ada karena untuk example8.cpp
@@ -65,10 +67,13 @@ target_link_libraries(example7 ${catkin_LIBRARIES})
 add_executable(example9 src/example9.cpp)
 target_link_libraries(example9 ${catkin_LIBRARIES})
 
+add_executable(example10 src/example10.cpp)
+target_link_libraries(example10 ${catkin_LIBRARIES})
+
 
 install(TARGETS
   example1 example2 example3 example4_ example5_
-  example6 example7 example9
+  example6 example7 example9 example10
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}

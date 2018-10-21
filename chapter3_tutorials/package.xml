@@ -88,6 +88,11 @@
   <!-- di panggil untuk exaple9 -->
   <build_depend>pcl_conversions</build_depend>
 
+  <!-- di panggil untuk exaple10 -->
+  <build_depend>interactive_markers</build_depend>
+  <build_depend>visualization_msgs</build_depend>
+
+
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>
