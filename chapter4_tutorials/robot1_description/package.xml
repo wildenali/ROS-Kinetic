@@ -12,27 +12,27 @@
   <license>TODO</license>
 
   <buildtool_depend>catkin</buildtool_depend>
-  <!-- <build_depend>fake_localization</build_depend> -->
-  <!-- <build_depend>laser_filters</build_depend> -->
-  <!-- <build_depend>map_server</build_depend> -->
+  <build_depend>fake_localization</build_depend>
+  <!-- <build_depend>laser_filters</build_depend>  -->  <!-- masih bermasalah saat di catkin_make -->
+  <build_depend>map_server</build_depend>
   <!-- <build_depend>robot_state_publisher</build_depend> -->
   <build_depend>roscpp</build_depend>
   <build_depend>rospy</build_depend>
   <build_depend>std_msgs</build_depend>
-  <!-- <build_depend>tf</build_depend> -->
+  <build_depend>tf</build_depend>
   <build_depend>urdf</build_depend>
-  <!-- <build_depend>xacro</build_depend> -->
+  <build_depend>xacro</build_depend>
 
-  <!-- <run_depend>fake_localization</run_depend> -->
-  <!-- <run_depend>laser_filters</run_depend> -->
-  <!-- <run_depend>map_server</run_depend> -->
+  <run_depend>fake_localization</run_depend>
+  <!-- <run_depend>laser_filters</run_depend> -->   <!-- masih bermasalah saat di catkin_make -->
+  <run_depend>map_server</run_depend>
   <!-- <run_depend>robot_state_publisher</run_depend> -->
   <run_depend>roscpp</run_depend>
   <run_depend>rospy</run_depend>
   <run_depend>std_msgs</run_depend>
-  <!-- <run_depend>tf</run_depend> -->
+  <run_depend>tf</run_depend>
   <run_depend>urdf</run_depend>
-  <!-- <run_depend>xacro</run_depend> -->
+  <run_depend>xacro</run_depend>
 
 
   <!-- The export tag contains other, unspecified, tags -->

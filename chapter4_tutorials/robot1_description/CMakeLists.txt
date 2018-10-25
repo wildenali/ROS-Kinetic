@@ -2,16 +2,16 @@ cmake_minimum_required(VERSION 2.8.3)
 project(robot1_description)
 
 find_package(catkin REQUIRED COMPONENTS
-  ## fake_localization
-  ## laser_filters
-  ## map_server
-  ##robot_state_publisher
+  fake_localization
+  ## laser_filters    ## ini masih bermasalah saat di catkin_make
+  map_server
+  ## robot_state_publisher
   roscpp
   rospy
   std_msgs
-  ## tf
+  tf
   urdf
-  ## xacro
+  xacro
 )
 
 catkin_package(
